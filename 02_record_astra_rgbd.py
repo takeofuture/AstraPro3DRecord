@@ -189,7 +189,7 @@ def main():
                 depth_frame.get_buffer_as_uint16(),
                 dtype=np.uint16
             ).reshape((depth_h, depth_w))
-
+            depth_mm = cv2.flip(depth_mm, 1)
             # RGB取得
             ret, color_frame = cap.read()
             if not ret:
